@@ -7,17 +7,7 @@ Bundle-Activator: org.mindhaus.bdb.browser.ui.Activator
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.core.resources,
- org.eclipse.core.variables,
- org.eclipse.debug.core,
- org.eclipse.debug.ui,
- org.eclipse.jdt,
- org.eclipse.jdt.core,
- org.eclipse.jdt.debug,
- org.eclipse.jdt.debug.ui,
- org.eclipse.jdt.ui,
- org.eclipse.ui.editors,
- org.eclipse.ui.workbench.texteditor
+ org.eclipse.debug.ui
 Eclipse-LazyStart: true
 Bundle-ClassPath: lib/je-3.2.23.jar,
  .
