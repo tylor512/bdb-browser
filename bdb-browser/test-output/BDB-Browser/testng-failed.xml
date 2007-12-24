@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="5" verbose="1" name="Failed suite [BDB-Browser]" junit="false" annotations="JDK">
+  <test name="org.mindhaus.bdb.browser.BaseDPLTest(failed)" junit="false" annotations="JDK">
+    <classes>
+      <class name="org.mindhaus.bdb.browser.BaseDPLTest">
+        <methods>
+          <include name="showMetaData"/>
+          <include name="putEntities"/>
+          <include name="setUp"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>
