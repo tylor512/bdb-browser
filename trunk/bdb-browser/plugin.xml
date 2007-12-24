@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+	<extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.mindhaus.bdb.browser.ui.Perspective"
+            icon="icons/sample.gif"
+            id="bdb.browser.Perspective"
+            name="BDB Browser">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="BDB Action Set"
+            visible="true"
+            id="bdb.browser.actionSet">
+         <menu
+               label="Sample &amp;Menu"
+               id="sampleMenu">
+            <separator
+                  name="sampleGroup">
+            </separator>
+         </menu>
+         <action
+               label="&amp;Sample Action"
+               icon="icons/sample2.gif"
+               class="org.mindhaus.bdb.browser.ui.actions.OpenEnvironmentAction"
+               tooltip="Hello, Eclipse world"
+               menubarPath="sampleMenu/sampleGroup"
+               toolbarPath="sampleGroup"
+               id="bdb.browser.OpenEnvironmentAction">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.*"
+            id="bdb.browser.contribution">
+         <menu
+               label="Index Menu"
+               path="additions"
+               id="bdb.browser.menu1">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Open Index"
+               class="org.mindhaus.bdb.browser.ui.actions.OpenIndexAction"
+               menubarPath="bdb_ui.menu1/group1"
+               enablesFor="1"
+               id="bdb.browser.newAction">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="BDB-Browser Preferences"
+            class="org.mindhaus.bdb.browser.ui.preferences.BDBBrowserPreferencePage"
+            id="bdb.browser.PreferencePage">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.mindhaus.bdb.browser.ui.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            objectClass="org.eclipse.core.resources.IFile"
+            name="DB Page"
+            nameFilter="*.*"
+            class="org.mindhaus.bdb.browser.ui.properties.DBPropertyPage"
+            id="bdb.browser.DBPropertyPage">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="BDB Browser"
+            id="bdb.browser">
+      </category>
+      <view
+            name="Environment View"
+            icon="icons/sample.gif"
+            category="bdb.browser"
+            class="org.mindhaus.bdb.browser.ui.views.EnvironmentView"
+            id="bdb.browser.EnvironmentView">
+      </view>
+      <view
+            name="Index View"
+            icon="icons/sample.gif"
+            category="bdb.browser"
+            class="org.mindhaus.bdb.browser.ui.views.IndexView"
+            id="bdb.browser.IndexView">
+      </view>
+   </extension>
+   <extension
+    point = "org.eclipse.ui.viewActions">
+      <viewContribution 
+         id="bdb.browser.EnvironmentViewActions" 
+         targetID="bdb.browser.EnvironmentView">        
+	   <action id="bdb.browser.OpenEnvironmentAction" 
+              label="%PopupMenu.ResourceNav.label" 
+	      menubarPath="additions"
+              toolbarPath="additions" 
+              icon="icons/sample2.gif" 
+              tooltip="%PopupMenu.ResourceNav.tooltip" 
+   	      helpContextId="bdb.browser.OpenEnvironmentAction_context"
+              class="org.mindhaus.bdb.browser.ui.actions.OpenEnvironmentAction" 
+              enablesFor="1"> 
+		<selection class="org.eclipse.core.resources.IFile" name="*.readme"/> 
+	   </action>
+      </viewContribution>
+ </extension>
+   
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+   </extension>
+
+</plugin>
