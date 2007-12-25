@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: BDB_Browser Plug-in
-Bundle-SymbolicName: BDB_Browser; singleton:=true
+Bundle-SymbolicName: org.mindhaus.bdb.browser;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Activator: org.mindhaus.bdb.browser.ui.Activator
 Bundle-Localization: plugin
@@ -9,5 +9,3 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.debug.ui
 Eclipse-LazyStart: true
-Bundle-ClassPath: lib/je-3.2.23.jar,
- .
