@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.mindhaus.bdb.browser.BaseDPLTest" failures="0" tests="2" time="0.891" errors="0">
-  <properties/>
-  <testcase name="putEntities" time="0.078" classname="org.mindhaus.bdb.browser.BaseDPLTest"/>
-  <testcase name="showMetaData" time="0.062" classname="org.mindhaus.bdb.browser.BaseDPLTest"/>
-</testsuite>

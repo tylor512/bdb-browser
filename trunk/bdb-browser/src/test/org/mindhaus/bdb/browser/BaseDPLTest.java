@@ -64,7 +64,7 @@ public class BaseDPLTest {
 		PrimaryIndex<Long, MyEntity> entitiesById = store.getPrimaryIndex( 
 				Long.class, MyEntity.class);
 		for (long i = 0 ; i < 10 ; i++) {
-			entitiesById.put(new MyEntity(i));
+			entitiesById.put(new MyEntity("My new entity " + i));
 		}
 	}
 	
