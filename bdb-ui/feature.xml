@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="bdb_ui"
-      label="Bdb_ui Feature"
-      version="1.0.0">
+      id="org.mindhaus.bdb.browser"
+      label="Bdb_Browser Feature"
+      version="1.0.0"
+      plugin="org.mindhaus.bdb.browser">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -16,11 +17,15 @@
       [Enter License Description here.]
    </license>
 
+   <url>
+      <update label="mindhaus.com Update Site" url="http://mindhaus.com/eclipse/update"/>
+   </url>
+
    <plugin
-         id="BDB_Browser"
+         id="org.mindhaus.bdb.browser"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>
