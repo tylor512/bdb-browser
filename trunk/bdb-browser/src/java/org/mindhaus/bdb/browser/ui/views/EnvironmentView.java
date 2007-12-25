@@ -17,6 +17,8 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.DirectoryDialog;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.ISharedImages;
@@ -36,6 +38,8 @@ import com.sleepycat.persist.PrimaryIndex;
 
 
 /**
+ * @todo doc
+ * 
  * This sample class demonstrates how to plug-in a new
  * workbench view. The view shows data obtained from the
  * model. The sample creates a dummy model on the fly,
@@ -62,14 +66,17 @@ public class EnvironmentView extends ViewPart {
 	private Action openEnvironmentAction;
 	private Action action2;
 	private Action doubleClickAction;
+	private Node root = new Node("root");
+	
 
 	
 	/**
-     * We will set up a dummy model to initialize tree heararchy. In real
+	 * 
+     * We will set up a dummy model to initialize tree hierarchy. In real
      * code, you will connect to a real model and expose its hierarchy.
      */
-    private Node createDummyModel() {
-    	File dbHome = new File("C:/workspaces/bdbbrowser/BDB-Browser/target/test/db");        
+    private void openEnvironment(String envHome) {
+    	File dbHome = new File(envHome);        
     	EnvironmentConnection conn = new EnvironmentConnection(dbHome);
     	EnvironmentNode envNode = new EnvironmentNode(conn);
     	conn.open();
@@ -88,10 +95,9 @@ public class EnvironmentView extends ViewPart {
         	}
         		
     	}
-    	Node root = new Node("root");
     	root.addChild(envNode);
+    	viewer.refresh();
         
-        return root;
     }
 
 
@@ -111,7 +117,7 @@ public class EnvironmentView extends ViewPart {
 		drillDownAdapter = new DrillDownAdapter(viewer);
 		viewer.setContentProvider(new EnvironmentViewContentProvider());
 		viewer.setLabelProvider(new EnvironmentViewLabelProvider());
-		viewer.setInput(createDummyModel());
+		viewer.setInput(root);
 		makeActions();
 		hookContextMenu();
 		hookDoubleClickAction();
@@ -162,7 +168,9 @@ public class EnvironmentView extends ViewPart {
 	private void makeActions() {
 		openEnvironmentAction = new Action() {
 			public void run() {
-				showMessage("New Environment");
+				DirectoryDialog d = new DirectoryDialog(getSite().getShell(), SWT.OPEN) ;
+				String envHome = d.open();
+				openEnvironment(envHome);				
 			}
 		};
 		openEnvironmentAction.setText("New Environment");
