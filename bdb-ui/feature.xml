@@ -21,6 +21,12 @@
       <update label="mindhaus.com Update Site" url="http://mindhaus.com/eclipse/update"/>
    </url>
 
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.debug.ui"/>
+   </requires>
+
    <plugin
          id="org.mindhaus.bdb.browser"
          download-size="0"
