@@ -2,11 +2,11 @@
 <feature
       id="org.mindhaus.bdb.browser"
       label="Bdb_Browser Feature"
-      version="1.0.0"
+      version="1.1.0"
       plugin="org.mindhaus.bdb.browser">
 
-   <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
+   <description url="http://code.google.com/p/bdb-browser/">
+      A basic brower for Berkeley DB JE databases
    </description>
 
    <copyright url="http://www.example.com/copyright">
@@ -18,7 +18,7 @@
    </license>
 
    <url>
-      <update label="mindhaus.com Update Site" url="http://mindhaus.com/eclipse/update"/>
+      <update label="mindhaus.com Update Site" url="http://bdb-browser.googlecode.com/svn/trunk/eclipse/update/"/>
    </url>
 
    <requires>
