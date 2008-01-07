@@ -13,50 +13,9 @@
    </extension>
    <extension
          point="org.eclipse.ui.actionSets">
-      <actionSet
-            label="BDB Action Set"
-            visible="true"
-            id="bdb.browser.actionSet">
-         <menu
-               label="Sample &amp;Menu"
-               id="sampleMenu">
-            <separator
-                  name="sampleGroup">
-            </separator>
-         </menu>
-         <action
-               label="&amp;Sample Action"
-               icon="icons/sample2.gif"
-               class="org.mindhaus.bdb.browser.ui.actions.OpenEnvironmentAction"
-               tooltip="Hello, Eclipse world"
-               menubarPath="sampleMenu/sampleGroup"
-               toolbarPath="sampleGroup"
-               id="bdb.browser.OpenEnvironmentAction">
-         </action>
-      </actionSet>
    </extension>
    <extension
          point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            objectClass="org.eclipse.core.resources.IFile"
-            nameFilter="*.*"
-            id="bdb.browser.contribution">
-         <menu
-               label="Index Menu"
-               path="additions"
-               id="bdb.browser.menu1">
-            <separator
-                  name="group1">
-            </separator>
-         </menu>
-         <action
-               label="Open Index"
-               class="org.mindhaus.bdb.browser.ui.actions.OpenIndexAction"
-               menubarPath="bdb_ui.menu1/group1"
-               enablesFor="1"
-               id="bdb.browser.newAction">
-         </action>
-      </objectContribution>
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
@@ -105,21 +64,6 @@
    </extension>
    <extension
     point = "org.eclipse.ui.viewActions">
-      <viewContribution 
-         id="bdb.browser.EnvironmentViewActions" 
-         targetID="bdb.browser.EnvironmentView">        
-	   <action id="bdb.browser.OpenEnvironmentAction" 
-              label="%PopupMenu.ResourceNav.label" 
-	      menubarPath="additions"
-              toolbarPath="additions" 
-              icon="icons/sample2.gif" 
-              tooltip="%PopupMenu.ResourceNav.tooltip" 
-   	      helpContextId="bdb.browser.OpenEnvironmentAction_context"
-              class="org.mindhaus.bdb.browser.ui.actions.OpenEnvironmentAction" 
-              enablesFor="1"> 
-		<selection class="org.eclipse.core.resources.IFile" name="*.readme"/> 
-	   </action>
-      </viewContribution>
  </extension>
    
    <extension
