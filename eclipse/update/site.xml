@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.mindhaus.bdb.browser_1.0.0.jar" id="org.mindhaus.bdb.browser" version="1.0.0">
-      <category name="bdb.tools"/>
-   </feature>
-   <feature url="features/org.mindhaus.bdb.browser_1.1.0.jar" id="org.mindhaus.bdb.browser" version="1.1.0">
+   <feature url="features/org.mindhaus.bdb.browser_1.1.1.jar" id="org.mindhaus.bdb.browser" version="1.1.1">
       <category name="bdb.tools"/>
    </feature>
    <category-def name="bdb.tools" label="Berkeley DB Tools">
