@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
+import sun.rmi.runtime.GetThreadPoolAction;
+
 import com.sleepycat.je.DatabaseException;
 import com.sleepycat.je.Environment;
 import com.sleepycat.je.EnvironmentConfig;
@@ -106,16 +108,19 @@ public class EnvironmentConnection {
 		return store;
 	}
 
-	public PrimaryIndex getPKIndex(String storeName, String entityName) {		
-		EntityStore store = getEntityStore(storeName);		
-		EntityMetadata metadata = store.getModel().getEntityMetadata(entityName);
+	public PrimaryIndex getPKIndex(String storeName, String entityName) {
+		EntityStore store = getEntityStore(storeName);
+		EntityMetadata metadata = store.getModel()
+				.getEntityMetadata(entityName);
 		PrimaryIndex entitiesById = null;
 		if (metadata != null) {
 			PrimaryKeyMetadata pkMeta = metadata.getPrimaryKey();
 			String pkClassname = pkMeta.getClassName();
 			try {
-				entitiesById = store.getPrimaryIndex( 
-						Class.forName(pkClassname), Class.forName(entityName));
+				entitiesById = store.getPrimaryIndex(Class.forName(pkClassname,
+						true, Thread.currentThread().getContextClassLoader()),
+						Class.forName(entityName, true, Thread.currentThread()
+								.getContextClassLoader()));
 			} catch (DatabaseException e) {
 				throw new RuntimeException(e);
 			} catch (ClassNotFoundException e) {

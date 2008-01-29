@@ -19,27 +19,12 @@
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
-      <page
-            name="BDB-Browser Preferences"
-            class="org.mindhaus.bdb.browser.ui.preferences.BDBBrowserPreferencePage"
-            id="bdb.browser.PreferencePage">
-      </page>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
-      <initializer
-            class="org.mindhaus.bdb.browser.ui.preferences.PreferenceInitializer">
-      </initializer>
    </extension>
    <extension
          point="org.eclipse.ui.propertyPages">
-      <page
-            objectClass="org.eclipse.core.resources.IFile"
-            name="DB Page"
-            nameFilter="*.*"
-            class="org.mindhaus.bdb.browser.ui.properties.DBPropertyPage"
-            id="bdb.browser.DBPropertyPage">
-      </page>
    </extension>
    <extension
          point="org.eclipse.ui.views">

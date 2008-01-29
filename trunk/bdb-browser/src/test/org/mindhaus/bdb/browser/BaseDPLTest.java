@@ -83,8 +83,10 @@ public class BaseDPLTest {
 		if (metadata != null) {
 			PrimaryKeyMetadata pkMeta = metadata.getPrimaryKey();
 			String pkClassname = pkMeta.getClassName();
-			PrimaryIndex entitiesById = store.getPrimaryIndex( 
-					Class.forName(pkClassname), Class.forName(classname));
+			PrimaryIndex entitiesById = store.getPrimaryIndex(Class.forName(pkClassname,
+					true, Thread.currentThread().getContextClassLoader()),
+					Class.forName(classname, true, Thread.currentThread()
+							.getContextClassLoader()));
 			EntityCursor cursor = entitiesById.entities();
 			try {
 				for (Object entity : cursor) {
