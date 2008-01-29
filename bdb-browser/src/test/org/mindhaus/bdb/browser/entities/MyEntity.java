@@ -10,7 +10,7 @@ import com.sleepycat.persist.model.PrimaryKey;
  * @author amarch
  *
  */
-@Entity
+@Entity(version=2)
 public class MyEntity {
 
 	@PrimaryKey(sequence = "sequence")
