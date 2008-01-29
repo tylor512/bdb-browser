@@ -36,7 +36,6 @@ public class ClassloaderUtil {
 		loader = new URLClassLoader(urls, eclipseClassloader);
 
 		Thread.currentThread().setContextClassLoader(loader);
-
 	}
 
 	public static URL[] getClasspathAsURLArray() {
