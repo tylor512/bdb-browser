@@ -2,7 +2,7 @@
 <feature
       id="org.mindhaus.bdb.browser"
       label="Bdb_Browser Feature"
-      version="1.1.0"
+      version="1.1.1"
       plugin="org.mindhaus.bdb.browser">
 
    <description url="http://code.google.com/p/bdb-browser/">
